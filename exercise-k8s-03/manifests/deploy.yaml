@@ -16,8 +16,6 @@ spec:
     spec:
       containers:
       - name: hello-app
-        image: docker7gm/hello-app:v0.0.3
+        image: gcr.io/<{PROJECT_ID>/hello-app:v0.0.1 # replace PROJECT_ID with project id
         ports:
         - containerPort: 8080
-      imagePullSecrets:
-        - name: regcredentials
