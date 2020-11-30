@@ -32,17 +32,17 @@ kubectl create secret generic regcred \
 
 build image inside helloApp
 ```
-docker build -t docker7gm/hello-app:v0.0.3 .
+docker build -t <youDockerRepo>/hello-app:v0.0.3 .
 ```
 
 (Optional) Run in order if it works
 ```
-docker run -p 8080:8080 docker7gm/hello-app
+docker run -p 8080:8080 <youDockerRepo>/hello-app
 ```
 
 push the image to docker hub
 ```
-docker push docker7gm/hello-app:v0.0.3
+docker push <youDockerRepo>/hello-app:v0.0.3
 ```
 
 Create a namespace
