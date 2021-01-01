@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ubuntu-deployment-slow
+  labels:
+    app: ubuntu-server-slow
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ubuntu-server-slow
+  template:
+    metadata:
+      labels:
+        app: ubuntu-server-slow
+    spec:
+      volumes:
+      - name: data-slow
+        persistentVolumeClaim:
+          claimName: pvc-ubuntu-slow
+      containers:
+      - name: ubuntu
+        image: ubuntu:latest
+        command: ["/bin/sleep", "30m"]
